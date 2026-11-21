@@ -1,0 +1,31 @@
+{
+  "name": "@guidekit/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Universal Web SDK with Spotlight Engine, 4-Tier DOM Resolver, and Shadow DOM Chatbot for GuideKit",
+  "main": "./dist/guidekit-sdk.es.js",
+  "module": "./dist/guidekit-sdk.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/guidekit-sdk.es.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:demo": "npm run build && node scripts/copy-demo-bundle.mjs",
+    "test": "npm run build && tsx tests/resolver.test.ts && tsx tests/widget.test.ts"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20.10.0",
+    "jsdom": "^24.0.0",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  }
+}
+

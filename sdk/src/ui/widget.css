@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@source "./widgetElement.ts";
+
+:host {
+  --gk-accent: #52a9ff;
+  --gk-accent-hover: #75bbef;
+  --gk-canvas: rgba(15, 18, 23, 0.96);
+  --gk-surface: #1d222b;
+  --gk-surface-hover: #252b35;
+  --gk-border: rgba(255, 255, 255, 0.09);
+  --gk-text: #f1f4f9;
+  --gk-muted: #b8c0ce;
+  --gk-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --gk-bottom-offset: 24px;
+  --gk-side-offset: 24px;
+  --gk-panel-width: 420px;
+  --gk-panel-height: 560px;
+  --gk-panel-max-width: calc(100vw - 32px);
+  --gk-radius: 24px;
+  color-scheme: dark;
+  font-family: var(--gk-font-family);
+}
+
+:host,
+:host * {
+  box-sizing: border-box;
+}
+
+.gk-root {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  width: 100vw;
+  max-width: 100vw;
+  bottom: max(var(--gk-bottom-offset), env(safe-area-inset-bottom));
+  padding-inline: max(var(--gk-side-offset), 12px);
+}
+
+.chat-panel {
+  width: min(var(--gk-panel-width), var(--gk-panel-max-width));
+  transform-origin: center bottom;
+}
+
+.gk-panel-opening {
+  will-change: transform, opacity;
+  animation: gk-panel-in 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gk-panel-closing {
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: gk-panel-out 180ms cubic-bezier(0.4, 0, 1, 1) both !important;
+}
+
+.gk-launcher-opening {
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+  animation: gk-launcher-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.messages-area {
+  overscroll-behavior: contain;
+}
+
+.gk-scrollbar {
+  scrollbar-color: color-mix(in srgb, var(--gk-border) 80%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+.gk-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.gk-scrollbar::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gk-border) 80%, transparent);
+  background-clip: padding-box;
+}
+
+@keyframes gk-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.965);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gk-panel-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+
+@keyframes gk-launcher-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .gk-root {
+    padding-inline: max(var(--gk-side-offset), 8px);
+  }
+
+  .chat-panel {
+    height: min(var(--gk-panel-height), calc(100dvh - 32px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host *,
+  :host *::before,
+  :host *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

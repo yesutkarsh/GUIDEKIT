@@ -1,0 +1,132 @@
+{
+  "name": "guidekit-vscode",
+  "displayName": "GuideKit — Product Tours & Workflows",
+  "description": "IDE-to-DOM self-healing product tour authoring and codebase workflow scanner",
+  "version": "0.1.0",
+  "publisher": "guidekit",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "bin": {
+    "guidekit": "./dist/cli.js"
+  },
+  "activationEvents": [
+    "onView:guidekit.sidebarView",
+    "onStartupFinished",
+    "onUri"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "guidekit-explorer",
+          "title": "GuideKit",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "guidekit-explorer": [
+        {
+          "type": "webview",
+          "id": "guidekit.sidebarView",
+          "name": "Workflows & Scanner"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "guidekit.createNewFlow",
+        "title": "GuideKit: Create New Manual Flow"
+      },
+      {
+        "command": "guidekit.openStudio",
+        "title": "GuideKit: Open Flow Studio"
+      },
+      {
+        "command": "guidekit.openOpenCode",
+        "title": "GuideKit: Ask Open Code"
+      },
+      {
+        "command": "guidekit.addSelectionAsStep",
+        "title": "GuideKit: Take to Active Flow (Capture Step)"
+      },
+      {
+        "command": "guidekit.connectAccount",
+        "title": "GuideKit: Connect Account with Google"
+      },
+      {
+        "command": "guidekit.signIn",
+        "title": "GuideKit: Sign In (Device Code)"
+      },
+      {
+        "command": "guidekit.signOut",
+        "title": "GuideKit: Sign Out"
+      },
+      {
+        "command": "guidekit.selectProject",
+        "title": "GuideKit: Select Active Project"
+      },
+      {
+        "command": "guidekit.scanWorkspace",
+        "title": "GuideKit: Scan Workspace for Interactive Flows"
+      },
+      {
+        "command": "guidekit.injectGuideIds",
+        "title": "GuideKit: Inject data-guide-id Codemods"
+      },
+      {
+        "command": "guidekit.syncAndPublish",
+        "title": "GuideKit: Sync Workflows & Publish Manifest"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "guidekit.addSelectionAsStep",
+        "key": "alt+g",
+        "mac": "alt+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "guidekit.addSelectionAsStep",
+        "key": "ctrl+alt+g",
+        "mac": "cmd+alt+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "guidekit.addSelectionAsStep",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "guidekit.addSelectionAsStep",
+          "when": "editorHasSelection",
+          "group": "guidekit@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "build:styles": "tailwindcss -c tailwind.config.js -i ./src/webview/tailwind.css -o ./media/sidebar.css --minify",
+    "compile": "npm run build:styles && tsc -p ./",
+    "watch": "npm run build:styles && tsc -watch -p ./",
+    "build": "npm run compile",
+    "test": "npm run compile && node dist/testPhase45.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.3.3"
+  }
+}

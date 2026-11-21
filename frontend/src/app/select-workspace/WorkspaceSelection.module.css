@@ -1,0 +1,433 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--gk-canvas);
+  padding: 24px;
+  color: var(--gk-ink);
+  font-family: var(--gk-font-sans);
+}
+
+.panel {
+  width: min(100%, 680px);
+  height: min(680px, calc(100dvh - 48px));
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--gk-border);
+  border-radius: var(--gk-radius-panel);
+  background: var(--gk-surface-subtle);
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  margin: 0 0 7px;
+  color: var(--gk-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--gk-ink);
+  font-family: var(--gk-font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.signOutButton {
+  min-height: 40px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid transparent;
+  border-radius: var(--gk-radius-control);
+  background: transparent;
+  padding: 0 10px;
+  color: var(--gk-muted);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.signOutButton:hover {
+  border-color: var(--gk-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gk-ink);
+}
+
+.searchField {
+  min-height: 46px;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--gk-border-strong);
+  border-radius: var(--gk-radius-control);
+  background: var(--gk-surface);
+  padding: 0 13px;
+  color: var(--gk-subtle);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.searchField:focus-within {
+  border-color: var(--gk-accent);
+  box-shadow: 0 0 0 3px rgba(82, 169, 255, 0.18);
+}
+
+.searchField input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--gk-ink);
+  font: inherit;
+  font-size: 14px;
+}
+
+.searchField input::placeholder {
+  color: var(--gk-subtle);
+  opacity: 1;
+}
+
+.searchField input::-webkit-search-cancel-button {
+  cursor: pointer;
+  filter: invert(1);
+  opacity: 0.45;
+}
+
+.resultCount {
+  min-width: 24px;
+  color: var(--gk-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.workspaceScrollArea {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gk-border-strong) transparent;
+  padding-right: 6px;
+}
+
+.workspaceScrollArea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.workspaceScrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.workspaceScrollArea::-webkit-scrollbar-thumb {
+  border: 2px solid var(--gk-surface-subtle);
+  border-radius: 8px;
+  background: rgba(196, 207, 226, 0.25);
+}
+
+.workspaceScrollArea::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 207, 226, 0.4);
+}
+
+.workspaceList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workspaceButton {
+  width: 100%;
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 34px;
+  align-items: center;
+  justify-content: stretch;
+  gap: 12px;
+  border: 1px solid var(--gk-border);
+  border-radius: 10px;
+  background: var(--gk-surface);
+  padding: 10px 12px;
+  color: var(--gk-ink);
+  text-align: left;
+  box-shadow: none;
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.workspaceButton:hover:not([data-disabled="true"]):not(:disabled) {
+  border-color: var(--gk-border-strong);
+  background: var(--gk-surface-hover);
+}
+
+.workspaceButton[data-last-used="true"] {
+  border-color: rgba(82, 169, 255, 0.3);
+}
+
+.workspaceButton[data-opening="true"] {
+  border-color: var(--gk-accent);
+  background: var(--gk-accent-soft);
+}
+
+.workspaceButton[data-disabled="true"] {
+  opacity: 0.6;
+}
+
+.workspaceButton[data-opening="true"][data-disabled="true"] {
+  opacity: 1;
+}
+
+.workspaceButton:focus-visible,
+.signOutButton:focus-visible,
+.retryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 3px solid rgba(82, 169, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.workspaceIcon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gk-border);
+  border-radius: 9px;
+  background: #222833;
+  color: var(--gk-ink);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.workspaceCopy {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.workspaceName,
+.workspaceSlug {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspaceName {
+  color: var(--gk-ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.workspaceSlug {
+  color: var(--gk-subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+}
+
+.workspaceAction {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--gk-subtle);
+}
+
+.workspaceButton[data-last-used="true"] .workspaceAction,
+.workspaceButton:hover .workspaceAction,
+.workspaceButton[data-opening="true"] .workspaceAction {
+  color: var(--gk-accent-hover);
+}
+
+.alert {
+  border: 1px solid rgba(248, 113, 113, 0.28);
+  border-radius: var(--gk-radius-card);
+  background: rgba(248, 113, 113, 0.08);
+  color: #fecaca;
+}
+
+.alertActions,
+.emptyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.retryButton,
+.secondaryButton {
+  min-height: 40px;
+  border-radius: var(--gk-radius-control);
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.retryButton {
+  background: var(--gk-action);
+  color: var(--gk-action-ink);
+}
+
+.retryButton:hover {
+  background: var(--gk-action-hover);
+}
+
+.secondaryButton {
+  border: 1px solid var(--gk-border-strong);
+  background: var(--gk-surface);
+  color: var(--gk-ink);
+}
+
+.emptyState {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  color: var(--gk-accent);
+  text-align: center;
+}
+
+.emptyState h2 {
+  margin: 14px 0 0;
+  color: var(--gk-ink);
+  font-family: var(--gk-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.emptyState p {
+  max-width: 340px;
+  margin: 7px 0 0;
+  color: var(--gk-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.emptyState > .secondaryButton {
+  margin-top: 16px;
+}
+
+.page :global(.skeleton) {
+  border: 1px solid var(--gk-border);
+  background: var(--gk-surface-hover);
+}
+
+.page :global(.skeleton--shimmer)::after {
+  background: linear-gradient(90deg, transparent, rgba(196, 207, 226, 0.11), transparent);
+}
+
+.loadingBrand {
+  width: 70px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.loadingTitle {
+  width: 190px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.loadingSearch {
+  width: 100%;
+  height: 46px;
+  border-radius: var(--gk-radius-control);
+}
+
+.loadingWorkspace {
+  width: 100%;
+  height: 68px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    display: block;
+    padding: 0;
+  }
+
+  .panel {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    gap: 16px;
+    border: 0;
+    border-radius: 0;
+    padding: 24px 16px;
+    box-shadow: none;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .signOutButton {
+    min-height: 44px;
+  }
+
+  .workspaceScrollArea {
+    padding-right: 2px;
+  }
+
+  .workspaceButton {
+    min-height: 66px;
+    grid-template-columns: 38px minmax(0, 1fr) 32px;
+    gap: 10px;
+  }
+
+  .workspaceIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .alertActions > *,
+  .emptyActions > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .signOutButton span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .signOutButton {
+    width: 44px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspaceButton,
+  .searchField {
+    transition: none;
+  }
+}

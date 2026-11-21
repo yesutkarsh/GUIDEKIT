@@ -1,0 +1,33 @@
+:root {
+  color-scheme: dark;
+  --gk-canvas: #0b0e13;
+  --gk-surface: #171c25;
+  --gk-surface-subtle: #131820;
+  --gk-surface-hover: #1b222d;
+  --gk-ink: #f1f4f9;
+  --gk-muted: #b8c0ce;
+  --gk-subtle: #8d97a8;
+  --gk-border: rgba(196, 207, 226, 0.11);
+  --gk-border-strong: rgba(196, 207, 226, 0.24);
+  --gk-accent: #52a9ff;
+  --gk-accent-hover: #75bbef;
+  --gk-accent-soft: rgba(47, 138, 204, 0.16);
+  --gk-accent-ink: #ffffff;
+  --gk-action: #182d50;
+  --gk-action-hover: #203d67;
+  --gk-action-ink: #ffffff;
+  --gk-danger: #f87171;
+  --gk-radius-control: 8px;
+  --gk-radius-card: 12px;
+  --gk-radius-panel: 16px;
+  --gk-shadow-overlay: 0 18px 45px rgba(0, 0, 0, 0.5);
+  --gk-font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --gk-font-display: var(--gk-font-sans);
+  --gk-auth-canvas: #0b0e13;
+  --gk-auth-surface: #131820;
+  --gk-auth-ink: #f1f4f9;
+  --gk-auth-muted: #aeb7c6;
+  --gk-auth-border: rgba(196, 207, 226, 0.18);
+  --gk-auth-accent: #52a9ff;
+  --gk-auth-accent-soft: rgba(47, 138, 204, 0.16);
+}

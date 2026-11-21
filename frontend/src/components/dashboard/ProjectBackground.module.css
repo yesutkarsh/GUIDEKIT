@@ -1,0 +1,87 @@
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #4e86d6;
+}
+
+.layerOne,
+.layerTwo,
+.grain {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+}
+
+.grain {
+  inset: 0;
+  z-index: 3;
+  opacity: .12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.line .layerOne {
+  inset: -80% -16% -88% 28%;
+  border: clamp(20px, 6vw, 72px) solid rgba(245, 246, 248, .78);
+  border-radius: 50%;
+  transform: rotate(-14deg);
+  box-shadow: 0 0 0 42px rgba(169, 201, 240, .25), 0 0 0 90px rgba(78, 134, 214, .17);
+}
+
+.line .layerTwo { background: linear-gradient(115deg, rgba(255,255,255,.22), transparent 42%, rgba(11,43,87,.14)); }
+
+.prism .layerOne {
+  inset: -45%;
+  background: repeating-conic-gradient(from 22deg at 50% 50%, rgba(242,237,204,.2) 0 8deg, rgba(38,72,61,.18) 8deg 17deg, transparent 17deg 28deg);
+  filter: blur(2px);
+}
+
+.prism .layerTwo { background: radial-gradient(circle at 72% 28%, rgba(242,237,204,.6), transparent 28%); }
+
+.columns .layerOne {
+  inset: -25% -12%;
+  background: repeating-linear-gradient(96deg, rgba(255,255,255,.16) 0 6%, transparent 6% 12%);
+  filter: blur(6px);
+}
+
+.columns .layerTwo { background: radial-gradient(ellipse at 20% 35%, rgba(255,255,255,.55), transparent 42%); }
+
+.sky .layerOne {
+  inset: -35%;
+  background: radial-gradient(ellipse at 30% 66%, rgba(255,255,255,.72), transparent 26%), radial-gradient(ellipse at 72% 42%, rgba(230,242,255,.64), transparent 30%);
+  filter: blur(12px);
+}
+
+.sky .layerTwo { background: linear-gradient(165deg, transparent 42%, rgba(54,116,202,.2)); }
+
+.retro .layerOne {
+  inset: -40%;
+  background: conic-gradient(from 210deg at 58% 44%, rgba(255,241,207,.7), transparent 20%, rgba(130,72,128,.6) 42%, transparent 64%, rgba(238,120,0,.55));
+  filter: blur(10px);
+}
+
+.retro .layerTwo { background: radial-gradient(circle at 35% 68%, rgba(240,145,153,.72), transparent 30%); }
+
+.live.prism .layerOne,
+.live.columns .layerOne,
+.live.sky .layerOne,
+.live.retro .layerOne { animation: background-drift 14s ease-in-out infinite alternate; }
+
+.live.sky .layerTwo,
+.live.retro .layerTwo { animation: background-breathe 9s ease-in-out infinite alternate; }
+
+@keyframes background-drift {
+  from { transform: translate3d(-2%, -1%, 0) rotate(-1deg) scale(1.02); }
+  to { transform: translate3d(3%, 2%, 0) rotate(2deg) scale(1.08); }
+}
+
+@keyframes background-breathe {
+  from { opacity: .62; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background * { animation: none !important; }
+}

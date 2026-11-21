@@ -1,0 +1,6 @@
+.editorShell { position: relative; min-width: 0; overflow: hidden; background: #1e1e1e; }
+.fallback { position: absolute; inset: 0; z-index: 0; margin: 0; overflow: auto; padding: 16px; color: #d4d4d4; font: 12px/20px ui-monospace, SFMono-Regular, Menlo, monospace; tab-size: 2; white-space: pre; }
+.fallbackHidden { opacity: 0; pointer-events: none; }
+.loading { display: grid; height: 100%; place-items: center; color: #858585; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.editorShell :global(.monaco-editor), .editorShell :global(.monaco-editor-background), .editorShell :global(.margin) { background: #1e1e1e !important; }
+@media (prefers-reduced-motion: reduce) { .fallback { scroll-behavior: auto; } }

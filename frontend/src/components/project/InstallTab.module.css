@@ -1,0 +1,82 @@
+.installPage { width: min(100%, 920px); display: flex; flex-direction: column; gap: 24px; color: var(--gk-ink); }
+.installHeader, .sectionHeading, .keyRow, .compactRow, .secretReveal { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.installHeader h2, .sectionHeading h3 { margin: 0; color: var(--gk-ink); font-weight: 600; }
+.installHeader h2 { font-size: 20px; }
+.sectionHeading h3 { font-size: 15px; }
+.installHeader p, .sectionHeading p, .details p, .methodNote { margin: 4px 0 0; color: var(--gk-muted); font-size: 13px; line-height: 1.55; }
+.docsLink { min-height: 44px; display: inline-flex; align-items: center; gap: 4px; color: var(--gk-accent-hover); font-size: 13px; font-weight: 500; text-decoration: none; }
+.docsLink:hover { color: var(--gk-ink); }
+.docsLink:focus-visible, .methodTabs button:focus-visible, .packageManagers button:focus-visible, .optionRow select:focus-visible, .originForm input:focus-visible, .details summary:focus-visible { outline: 2px solid var(--gk-accent); outline-offset: 2px; }
+.setupSteps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 1px; list-style: none; border: 1px solid var(--gk-border); border-radius: var(--gk-radius-card); background: var(--gk-border); overflow: hidden; }
+.setupSteps li { min-width: 0; display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gk-surface-subtle); }
+.setupSteps li > span, .sectionIcon { width: 30px; height: 30px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--gk-border-strong); border-radius: 8px; color: var(--gk-subtle); font-size: 12px; }
+.setupSteps .complete > span { border-color: rgba(82, 169, 255, .36); background: var(--gk-accent-soft); color: var(--gk-accent-hover); }
+.setupSteps strong, .setupSteps small { display: block; }
+.setupSteps strong { font-size: 13px; font-weight: 600; }
+.setupSteps small { margin-top: 3px; color: var(--gk-subtle); font-size: 12px; }
+.connectionSection, .installSection { border: 1px solid var(--gk-border); border-radius: var(--gk-radius-card); background: var(--gk-surface); padding: 20px; }
+.sectionHeading { justify-content: flex-start; }
+.sectionIcon { color: var(--gk-accent-hover); background: var(--gk-accent-soft); }
+.keyRow, .emptyAction, .originForm, .originList, .codeFlow { margin-top: 20px; }
+.keyRow { min-width: 0; border-top: 1px solid var(--gk-border); padding-top: 16px; }
+.keyRow > div:first-child { min-width: 0; }
+.keyRow code, .compactRow code, .secretReveal code { display: block; color: var(--gk-ink); font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.statusLabel { display: block; margin-bottom: 5px; color: var(--gk-subtle); font-size: 12px; }
+.emptyAction { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--gk-border); padding-top: 16px; }
+.emptyAction p { margin: 0; color: var(--gk-muted); font-size: 13px; }
+.primaryButton, .secondaryButton { min-height: 44px; border-radius: var(--gk-radius-control); padding: 0 16px; font-size: 13px; font-weight: 600; }
+.primaryButton { background: var(--gk-action); color: var(--gk-action-ink); }
+.primaryButton:hover { background: var(--gk-action-hover); }
+.secondaryButton { border: 1px solid var(--gk-border-strong); background: var(--gk-surface-subtle); color: var(--gk-ink); }
+.secondaryButton:hover { background: var(--gk-surface-hover); }
+.originForm { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 12px; }
+.originForm label, .optionRow label { display: block; margin-bottom: 7px; color: var(--gk-ink); font-size: 12px; font-weight: 600; }
+.originForm input, .optionRow select { width: 100%; min-height: 44px; border: 1px solid var(--gk-border-strong); border-radius: var(--gk-radius-control); background: var(--gk-canvas); color: var(--gk-ink); padding: 0 12px; font: inherit; font-size: 14px; }
+.selectWrap { position: relative; }
+.optionRow select { appearance: none; padding-right: 40px; }
+.selectIcon { position: absolute; top: 50%; right: 12px; pointer-events: none; color: var(--gk-subtle); transform: translateY(-50%); }
+.originForm small { display: block; margin-top: 7px; color: var(--gk-subtle); font-size: 12px; }
+.originList { border-top: 1px solid var(--gk-border); }
+.compactRow { min-width: 0; min-height: 52px; border-bottom: 1px solid var(--gk-border); padding: 8px 0; }
+.compactRow:last-child { border-bottom: 0; }
+.compactRow > div { min-width: 0; }
+.compactRow small { display: block; margin-top: 2px; color: var(--gk-subtle); font-size: 11px; }
+.details { margin-top: 16px; border-top: 1px solid var(--gk-border); padding-top: 12px; }
+.details summary { min-height: 44px; display: flex; align-items: center; color: var(--gk-muted); cursor: pointer; font-size: 13px; font-weight: 500; }
+.detailActions { margin: 14px 0; }
+.advancedKeys { margin-top: 0; border: 1px solid var(--gk-border); border-radius: var(--gk-radius-card); background: var(--gk-surface-subtle); padding: 0 20px 16px; }
+.notice { display: flex; align-items: center; gap: 8px; margin-top: 18px; border: 1px solid rgba(245, 158, 11, .24); border-radius: 8px; background: rgba(245, 158, 11, .07); padding: 11px 12px; color: #fcd38d; font-size: 12px; }
+.methodTabs { display: inline-flex; gap: 4px; margin-top: 20px; border: 1px solid var(--gk-border); border-radius: 9px; background: var(--gk-surface-subtle); padding: 4px; }
+.methodTabs button, .packageManagers button { min-height: 36px; display: inline-flex; align-items: center; gap: 7px; border: 0; border-radius: 6px; background: transparent; color: var(--gk-subtle); padding: 0 12px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.methodTabs button[aria-selected="true"], .packageManagers button[aria-pressed="true"] { background: var(--gk-surface-hover); color: var(--gk-ink); }
+.optionRow { width: min(100%, 320px); }
+.packageManagers { display: flex; flex-wrap: wrap; gap: 2px; margin: 16px 0 8px; }
+.packageManagers button { min-height: 32px; padding: 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.codeBlock { margin-top: 12px; overflow: hidden; border: 1px solid var(--gk-border); border-radius: var(--gk-radius-card); background: var(--gk-canvas); }
+.codeHeader { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gk-border); padding: 0 10px 0 14px; color: var(--gk-subtle); }
+.codeHeader span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; }
+.methodNote code { color: var(--gk-ink); }
+.secretReveal { margin: 14px 0; border: 1px solid rgba(245, 158, 11, .24); border-radius: 8px; padding: 12px; }
+.secretReveal strong { display: block; margin-bottom: 5px; font-size: 12px; }
+.errorMessage, .errorMessage strong, .errorMessage span { display: block; }
+.errorMessage strong { margin-bottom: 4px; }
+.loadingLine, .loadingCard { border-radius: 12px; background: linear-gradient(90deg, var(--gk-surface-subtle), var(--gk-surface-hover), var(--gk-surface-subtle)); background-size: 220% 100%; animation: installShimmer 1.6s linear infinite; }
+.loadingLine { width: 48%; height: 28px; }
+.loadingCard { height: 180px; }
+@keyframes installShimmer { to { background-position: -220% 0; } }
+@media (max-width: 720px) {
+  .installHeader { align-items: flex-start; }
+  .setupSteps { grid-template-columns: 1fr; }
+  .originForm { grid-template-columns: 1fr; }
+  .originForm .primaryButton { width: 100%; }
+  .emptyAction { align-items: stretch; flex-direction: column; }
+  .methodTabs { width: 100%; }
+  .methodTabs button { flex: 1; justify-content: center; min-height: 44px; }
+  .connectionSection, .installSection { padding: 16px; }
+}
+@media (max-width: 480px) {
+  .installHeader { flex-direction: column; gap: 6px; }
+  .keyRow { align-items: flex-start; }
+  .setupSteps li { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .loadingLine, .loadingCard { animation: none; } }

@@ -1,0 +1,1466 @@
+{
+ "start": "2026-11-16T18:57:40.717Z",
+ "round": 2,
+ "idle": 0,
+ "errors": 0,
+ "status": "fail",
+ "history": [
+  {
+   "at": "2026-11-16T19:00:36.084Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 39,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-16T19:00:53.792Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 38,
+   "round": 2,
+   "reused": true,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": null,
+  "url": "http://127.0.0.1:3001/demo/taxi-sanchalak?guide=open",
+  "root": null,
+  "kind": "software",
+  "category": "interactive product guidance",
+  "primary": "Ask Guide",
+  "rounds": 3,
+  "start": "2026-11-16T18:57:40.717Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "2a354e6b63eb1d74:fd2a1e74",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "2a354e6b63eb1d74",
+ "page": "http://127.0.0.1:3001/demo/taxi-sanchalak?guide=open",
+ "found": {
+  "fails": [
+   {
+    "check": "text-only",
+    "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.\"",
+    "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+    "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "text-only"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.\""
+    ]
+   },
+   {
+    "check": "button-styles",
+    "where": "(one screen)",
+    "msg": "4 button styles on one screen: soft, fill #1a1c24, outline #2b303e (\"Passenger\"); soft, fill #10b981 (\"🏠 Home\"); soft, fill #2a181a, outline #f43f5e (\"Logged Out\"); soft, fill #f59e0b (\"Sign In\"); the odd ones out: \"Logged Out\", \"Sign In\"",
+    "fix": "one primary and one secondary button: one shape, one height per size, one label size",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "button-styles"
+    ],
+    "wheres": [
+     "(one screen)"
+    ]
+   },
+   {
+    "check": "button-styles",
+    "where": "(the page)",
+    "msg": "4 button styles on the page: soft, fill #10b981 x1 (\"🏠 Home\"); soft, fill #2a181a, outline #f43f5e x1 (\"Logged Out\"); soft, fill #1a1c24, outline #2b303e x2 (\"Passenger\"); soft, fill #f59e0b x1 (\"Sign In\")",
+    "fix": "one primary and one secondary button: one shape, one height per size, one label size",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "button-styles"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "div:nth-of-type(2) > main > div",
+    "msg": "the hero has no button (the nav's does not count)",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div"
+    ]
+   },
+   {
+    "check": "copy-headline",
+    "where": "main > div > div:nth-of-type(1) > h1 \"Instant Rides. Zero Commission Payouts.\"",
+    "msg": "\"Instant Rides. Zero Commission Payouts.\" does not name what is sold (interactive product guidance, interactive, product, guidance, from flags)",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "copy-headline"
+    ],
+    "wheres": [
+     "main > div > div:nth-of-type(1) > h1 \"Instant Rides. Zero Commission Payouts.\""
+    ]
+   },
+   {
+    "check": "text-contrast",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > p \"Guaranteed cabs in Delhi NCR, Mumbai & B\"",
+    "msg": "body text in #8e929f on #12141a reads 5.93:1 (needs 7:1)",
+    "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "text-contrast"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(1) > p \"Guaranteed cabs in Delhi NCR, Mumbai & B\""
+    ]
+   },
+   {
+    "check": "heading-order",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > h3 \"Book a Taxi\"",
+    "msg": "\"Book a Taxi\" is an h3 after an h1: a level is skipped",
+    "fix": "step down one level at a time (h1, h2, h3): change the tag, not the look; a footer's column heads are h3",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "heading-order"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(1) > h3 \"Book a Taxi\""
+    ]
+   },
+   {
+    "check": "focus-ring",
+    "where": ".x1uvtmcs:focus:not(#\\#):not(#\\#)",
+    "msg": "\".x1uvtmcs:focus:not(#\\#):not(#\\#)\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+    "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-ring"
+    ],
+    "wheres": [
+     ".x1uvtmcs:focus:not(#\\#):not(#\\#)"
+    ]
+   },
+   {
+    "check": "focus-ring",
+    "where": ".focus\\:outline-none:focus",
+    "msg": "\".focus\\:outline-none:focus\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+    "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-ring"
+    ],
+    "wheres": [
+     ".focus\\:outline-none:focus"
+    ]
+   },
+   {
+    "check": "focus-ring",
+    "where": ".focus-visible\\:outline-none:focus-visible",
+    "msg": "\".focus-visible\\:outline-none:focus-visible\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+    "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-ring"
+    ],
+    "wheres": [
+     ".focus-visible\\:outline-none:focus-visible"
+    ]
+   },
+   {
+    "check": "focus-ring",
+    "where": ".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl",
+    "msg": "\".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+    "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-ring"
+    ],
+    "wheres": [
+     ".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl"
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "script:nth-of-type(12) > nextjs-portal",
+    "msg": "Tab stop 19, nextjs-portal \"\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "script:nth-of-type(12) > nextjs-portal"
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "guidekit-widget",
+    "msg": "Tab stop 20, guidekit-widget \"\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "guidekit-widget"
+    ]
+   },
+   {
+    "check": "moment-none",
+    "where": "(the page)",
+    "msg": "a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+    "fix": "deal one (moments.mjs pick --page software) and mount it in its own section",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "moment-none"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+    "msg": "the hero ends at 542px on a 900px screen, 358px above the fold: it ends at the fold, 1px either way (SR-1)",
+    "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+    "msg": "the section starts at 207px, 207px below the screen grid (0 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+    "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+    "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+    "msg": "the content of section 1 runs 240px from the left and 240px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div:nth-of-type(2) \"Sparkathon Live Pitch SimulatorDeveloper\"",
+    "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) \"Sparkathon Live Pitch SimulatorDeveloper\""
+    ]
+   },
+   {
+    "check": "nav",
+    "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(2) \"Book Cab\"",
+    "msg": "nav link wraps to a second line",
+    "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "nav"
+    ],
+    "wheres": [
+     "nav > div > div:nth-of-type(2) > button:nth-of-type(2) \"Book Cab\""
+    ]
+   },
+   {
+    "check": "nav",
+    "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(3) \"Partner With Us\"",
+    "msg": "nav link wraps to a second line",
+    "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "nav"
+    ],
+    "wheres": [
+     "nav > div > div:nth-of-type(2) > button:nth-of-type(3) \"Partner With Us\""
+    ]
+   },
+   {
+    "check": "nav",
+    "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(4) \"Driver Console\"",
+    "msg": "nav link wraps to a second line",
+    "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "nav"
+    ],
+    "wheres": [
+     "nav > div > div:nth-of-type(2) > button:nth-of-type(4) \"Driver Console\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "main > div > div:nth-of-type(2) > div:nth-of-type(3) \"Driver Partner Signup Join 45,000+ verif\"",
+    "msg": "runs 31px off the right side of the screen",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "main > div > div:nth-of-type(2) > div:nth-of-type(3) \"Driver Partner Signup Join 45,000+ verif\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "(the page)",
+    "msg": "the page is 455px wide on a 390px screen and scrolls sideways",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "cut-text",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(3) > h3 \"Driver Partner Signup\"",
+    "msg": "cut 6px by the right edge of the screen",
+    "fix": "give the text room: no overflow clipping a line, no line past its box",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cut-text"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(3) > h3 \"Driver Partner Signup\""
+    ]
+   },
+   {
+    "check": "pinned",
+    "where": "div:nth-of-type(2) > div \"SPARKATHON LIVE PITCH SIMULATOR Develope\"",
+    "msg": "held on screen for 0.3 screens of scroll (position: sticky) while the page moves on",
+    "fix": "let the section scroll with the page",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "pinned"
+    ],
+    "wheres": [
+     "div:nth-of-type(2) > div \"SPARKATHON LIVE PITCH SIMULATOR Develope\""
+    ]
+   },
+   {
+    "check": "tap-size",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\"",
+    "msg": "a 80x27px tap target (and 5 more like it on this screen): 6px from the next one (\"Passenger\"), so a thumb lands on the wrong one",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "tap-size"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div:nth-of-type(1) > div:nth-of-type(1) > div > span \"SPARKATHON LIVE PITCH SIMULATOR\"",
+    "msg": "the words \"SPARKATHON LIVE PITCH SIMULATOR\" lie over \"India's Driver-First Mobility Pl\": two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div:nth-of-type(1) > div:nth-of-type(1) > div > span \"SPARKATHON LIVE PITCH SIMULATOR\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div:nth-of-type(1) > div:nth-of-type(1) > a > span \"Developer Admin Portal\"",
+    "msg": "the words \"Developer Admin Portal\" lie over \"Book Cab\": two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div:nth-of-type(1) > div:nth-of-type(1) > a > span \"Developer Admin Portal\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\"",
+    "msg": "the words \"Logged Out\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2) \"Passenger\"",
+    "msg": "the words \"Passenger\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2) \"Passenger\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(3) \"Driver\"",
+    "msg": "the words \"Driver\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(3) \"Driver\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > span \"DOM SELF-HEALING CHAOS MODES:\"",
+    "msg": "the words \"DOM SELF-HEALING CHAOS MODES:\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(1) > span \"DOM SELF-HEALING CHAOS MODES:\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2) \"Mode 2: Stripped IDs (Tier 2 · Fingerpri\"",
+    "msg": "the words \"Mode 2: Stripped IDs (Tier 2 · F\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2) \"Mode 2: Stripped IDs (Tier 2 · Fingerpri\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3) \"Mode 3: Mutated Button (Tier 3 · Cloud A\"",
+    "msg": "the words \"Mode 3: Mutated Button (Tier 3 ·\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3) \"Mode 3: Mutated Button (Tier 3 · Cloud A\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "nav > div > div \"Home Book Cab Partner With Us Driver Con\"",
+    "msg": "at 320px wide it runs 128px past the screen's right edge (the page is 448px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "nav > div > div \"Home Book Cab Partner With Us Driver Con\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div > div > div \"Driver Partner Signup Join 45,000+ verif\"",
+    "msg": "at 320px wide it runs 101px past the screen's right edge (the page is 448px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div > div > div \"Driver Partner Signup Join 45,000+ verif\""
+    ]
+   },
+   {
+    "check": "container",
+    "where": "page",
+    "msg": "no .wrap",
+    "fix": "put the content in one .wrap",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "container"
+    ],
+    "wheres": [
+     "page"
+    ]
+   },
+   {
+    "check": "overflow-x",
+    "where": "page",
+    "msg": "the page scrolls sideways",
+    "fix": "remove what scrolls sideways",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "overflow-x"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "assets",
+    "where": "(the page)",
+    "msg": "the data file http://127.0.0.1:8000/api/v1/projects did not load (ERR_FAILED)",
+    "fix": "fix the path, or remove the reference",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-buttons",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) \"🏠 Home\"",
+    "msg": "\"🏠 Home\" does not start with a verb (book, buy, try, start, get, see...) (and 3 more like it: \"Logged Out\", \"Passenger\", \"Driver\")",
+    "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "skip-link",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(1) > a \"Developer Admin Portal\"",
+    "msg": "the first Tab stop is \"Developer Admin Portal\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+    "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "share-meta",
+    "where": "head",
+    "msg": "the head lacks og:title, og:description, og:image, twitter:card, an icon, theme-color: a shared link shows no picture or title of its own",
+    "fix": "copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(1) > a \"Developer Admin Portal\"",
+    "msg": "a 113x33px tap target: under the 44px a phone needs (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) \"🏠 Home\"",
+    "msg": "a 52x43px tap target (and 1 more like it on this screen): under the 44px a phone needs (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\"",
+    "msg": "a 80x27px tap target (and 6 more like it on this screen): 6px from the next one (\"Passenger\"), so a thumb lands on the wrong one (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(1) \"Home\"",
+    "msg": "a 36x20px tap target: under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(2) \"Book Cab\"",
+    "msg": "a 31x39px tap target (and 1 more like it on this screen): under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "fold-cut",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(2) > p \"Withdraw instant earnings on the go with\"",
+    "msg": "a line of the hero text is sliced by the bottom of the first screen",
+    "fix": "size the hero so the heading ends above the fold, or starts below it",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "fold-cut",
+    "where": "div > div:nth-of-type(2) > div:nth-of-type(3) > p \"Join 45,000+ verified drivers across Ind\"",
+    "msg": "a line of the hero text is sliced by the bottom of the first screen",
+    "fix": "size the hero so the heading ends above the fold, or starts below it",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-styles",
+    "where": "(the page)",
+    "msg": "3 button styles on the page: soft, fill #10b981 x1 (\"🏠 Home\"); soft, fill #2a181a, outline #f43f5e x1 (\"Logged Out\"); soft, fill #1a1c24, outline #2b303e x2 (\"Passenger\") (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "one primary and one secondary button: one shape, one height per size, one label size",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "stagger",
+    "where": "div:nth-of-type(2) > div > div:nth-of-type(1) \"SPARKATHON LIVE PITCH SIMULATOR Develope\"",
+    "msg": "3 rows start at 3 different left offsets (+11, +4, +0px) (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "start every row of the list on one left edge",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "stranded-action",
+    "where": "div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) \"🏠 Home\"",
+    "msg": "stands 391px down from the nearest text of its block (\"Instant Rides. Zero Commission\") (inside a held section or scroll scene, whose motion --quick does not check) (and 3 more like it: \"Logged Out\", \"Passenger\", \"Driver\")",
+    "fix": "put the button under or beside the text it belongs to",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 158,
+   "layout": 14
+  }
+ },
+ "open": [
+  {
+   "check": "text-only",
+   "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.\"",
+   "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+   "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "text-only"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.\""
+   ]
+  },
+  {
+   "check": "button-styles",
+   "where": "(one screen)",
+   "msg": "4 button styles on one screen: soft, fill #1a1c24, outline #2b303e (\"Passenger\"); soft, fill #10b981 (\"🏠 Home\"); soft, fill #2a181a, outline #f43f5e (\"Logged Out\"); soft, fill #f59e0b (\"Sign In\"); the odd ones out: \"Logged Out\", \"Sign In\"",
+   "fix": "one primary and one secondary button: one shape, one height per size, one label size",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "button-styles"
+   ],
+   "wheres": [
+    "(one screen)"
+   ]
+  },
+  {
+   "check": "button-styles",
+   "where": "(the page)",
+   "msg": "4 button styles on the page: soft, fill #10b981 x1 (\"🏠 Home\"); soft, fill #2a181a, outline #f43f5e x1 (\"Logged Out\"); soft, fill #1a1c24, outline #2b303e x2 (\"Passenger\"); soft, fill #f59e0b x1 (\"Sign In\")",
+   "fix": "one primary and one secondary button: one shape, one height per size, one label size",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "button-styles"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "div:nth-of-type(2) > main > div",
+   "msg": "the hero has no button (the nav's does not count)",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div"
+   ]
+  },
+  {
+   "check": "copy-headline",
+   "where": "main > div > div:nth-of-type(1) > h1 \"Instant Rides. Zero Commission Payouts.\"",
+   "msg": "\"Instant Rides. Zero Commission Payouts.\" does not name what is sold (interactive product guidance, interactive, product, guidance, from flags)",
+   "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "copy-headline"
+   ],
+   "wheres": [
+    "main > div > div:nth-of-type(1) > h1 \"Instant Rides. Zero Commission Payouts.\""
+   ]
+  },
+  {
+   "check": "text-contrast",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > p \"Guaranteed cabs in Delhi NCR, Mumbai & B\"",
+   "msg": "body text in #8e929f on #12141a reads 5.93:1 (needs 7:1)",
+   "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "text-contrast"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(1) > p \"Guaranteed cabs in Delhi NCR, Mumbai & B\""
+   ]
+  },
+  {
+   "check": "heading-order",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > h3 \"Book a Taxi\"",
+   "msg": "\"Book a Taxi\" is an h3 after an h1: a level is skipped",
+   "fix": "step down one level at a time (h1, h2, h3): change the tag, not the look; a footer's column heads are h3",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "heading-order"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(1) > h3 \"Book a Taxi\""
+   ]
+  },
+  {
+   "check": "focus-ring",
+   "where": ".x1uvtmcs:focus:not(#\\#):not(#\\#)",
+   "msg": "\".x1uvtmcs:focus:not(#\\#):not(#\\#)\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+   "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-ring"
+   ],
+   "wheres": [
+    ".x1uvtmcs:focus:not(#\\#):not(#\\#)"
+   ]
+  },
+  {
+   "check": "focus-ring",
+   "where": ".focus\\:outline-none:focus",
+   "msg": "\".focus\\:outline-none:focus\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+   "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-ring"
+   ],
+   "wheres": [
+    ".focus\\:outline-none:focus"
+   ]
+  },
+  {
+   "check": "focus-ring",
+   "where": ".focus-visible\\:outline-none:focus-visible",
+   "msg": "\".focus-visible\\:outline-none:focus-visible\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+   "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-ring"
+   ],
+   "wheres": [
+    ".focus-visible\\:outline-none:focus-visible"
+   ]
+  },
+  {
+   "check": "focus-ring",
+   "where": ".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl",
+   "msg": "\".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl\" in layout.css?v=1794855478279 removes the focus outline and sets nothing in its place",
+   "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-ring"
+   ],
+   "wheres": [
+    ".dropdown__popover:focus-visible:not([data-focused]), .dropdown__popover[data-focus-visibl"
+   ]
+  },
+  {
+   "check": "focus-visible",
+   "where": "script:nth-of-type(12) > nextjs-portal",
+   "msg": "Tab stop 19, nextjs-portal \"\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "script:nth-of-type(12) > nextjs-portal"
+   ]
+  },
+  {
+   "check": "moment-none",
+   "where": "(the page)",
+   "msg": "a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+   "fix": "deal one (moments.mjs pick --page software) and mount it in its own section",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "moment-none"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+   "msg": "the hero ends at 542px on a 900px screen, 358px above the fold: it ends at the fold, 1px either way (SR-1)",
+   "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+   "msg": "the section starts at 207px, 207px below the screen grid (0 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+   "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+   "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\"",
+   "msg": "the content of section 1 runs 240px from the left and 240px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > main > div \"Instant Rides. Zero Commission Payouts.W\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div:nth-of-type(2) \"Sparkathon Live Pitch SimulatorDeveloper\"",
+   "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) \"Sparkathon Live Pitch SimulatorDeveloper\""
+   ]
+  },
+  {
+   "check": "nav",
+   "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(2) \"Book Cab\"",
+   "msg": "nav link wraps to a second line",
+   "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "nav"
+   ],
+   "wheres": [
+    "nav > div > div:nth-of-type(2) > button:nth-of-type(2) \"Book Cab\""
+   ]
+  },
+  {
+   "check": "nav",
+   "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(3) \"Partner With Us\"",
+   "msg": "nav link wraps to a second line",
+   "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "nav"
+   ],
+   "wheres": [
+    "nav > div > div:nth-of-type(2) > button:nth-of-type(3) \"Partner With Us\""
+   ]
+  },
+  {
+   "check": "nav",
+   "where": "nav > div > div:nth-of-type(2) > button:nth-of-type(4) \"Driver Console\"",
+   "msg": "nav link wraps to a second line",
+   "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "nav"
+   ],
+   "wheres": [
+    "nav > div > div:nth-of-type(2) > button:nth-of-type(4) \"Driver Console\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "main > div > div:nth-of-type(2) > div:nth-of-type(3) \"Driver Partner Signup Join 45,000+ verif\"",
+   "msg": "runs 31px off the right side of the screen",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "main > div > div:nth-of-type(2) > div:nth-of-type(3) \"Driver Partner Signup Join 45,000+ verif\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "(the page)",
+   "msg": "the page is 455px wide on a 390px screen and scrolls sideways",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "cut-text",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(3) > h3 \"Driver Partner Signup\"",
+   "msg": "cut 6px by the right edge of the screen",
+   "fix": "give the text room: no overflow clipping a line, no line past its box",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cut-text"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(3) > h3 \"Driver Partner Signup\""
+   ]
+  },
+  {
+   "check": "pinned",
+   "where": "div:nth-of-type(2) > div \"SPARKATHON LIVE PITCH SIMULATOR Develope\"",
+   "msg": "held on screen for 0.3 screens of scroll (position: sticky) while the page moves on",
+   "fix": "let the section scroll with the page",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "pinned"
+   ],
+   "wheres": [
+    "div:nth-of-type(2) > div \"SPARKATHON LIVE PITCH SIMULATOR Develope\""
+   ]
+  },
+  {
+   "check": "tap-size",
+   "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\"",
+   "msg": "a 80x27px tap target (and 5 more like it on this screen): 6px from the next one (\"Passenger\"), so a thumb lands on the wrong one",
+   "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "tap-size"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div:nth-of-type(1) > div:nth-of-type(1) > div > span \"SPARKATHON LIVE PITCH SIMULATOR\"",
+   "msg": "the words \"SPARKATHON LIVE PITCH SIMULATOR\" lie over \"India's Driver-First Mobility Pl\": two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div:nth-of-type(1) > div:nth-of-type(1) > div > span \"SPARKATHON LIVE PITCH SIMULATOR\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div:nth-of-type(1) > div:nth-of-type(1) > a > span \"Developer Admin Portal\"",
+   "msg": "the words \"Developer Admin Portal\" lie over \"Book Cab\": two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div:nth-of-type(1) > div:nth-of-type(1) > a > span \"Developer Admin Portal\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\"",
+   "msg": "the words \"Logged Out\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1) \"Logged Out\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2) \"Passenger\"",
+   "msg": "the words \"Passenger\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2) \"Passenger\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(3) \"Driver\"",
+   "msg": "the words \"Driver\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(3) \"Driver\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(1) > span \"DOM SELF-HEALING CHAOS MODES:\"",
+   "msg": "the words \"DOM SELF-HEALING CHAOS MODES:\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(1) > span \"DOM SELF-HEALING CHAOS MODES:\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2) \"Mode 2: Stripped IDs (Tier 2 · Fingerpri\"",
+   "msg": "the words \"Mode 2: Stripped IDs (Tier 2 · F\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2) \"Mode 2: Stripped IDs (Tier 2 · Fingerpri\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3) \"Mode 3: Mutated Button (Tier 3 · Cloud A\"",
+   "msg": "the words \"Mode 3: Mutated Button (Tier 3 ·\" lie over \"Instant Rides. Zero Commission P\" of another section: two lines in one place",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3) \"Mode 3: Mutated Button (Tier 3 · Cloud A\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "nav > div > div \"Home Book Cab Partner With Us Driver Con\"",
+   "msg": "at 320px wide it runs 128px past the screen's right edge (the page is 448px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "nav > div > div \"Home Book Cab Partner With Us Driver Con\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div > div > div \"Driver Partner Signup Join 45,000+ verif\"",
+   "msg": "at 320px wide it runs 101px past the screen's right edge (the page is 448px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div > div > div \"Driver Partner Signup Join 45,000+ verif\""
+   ]
+  },
+  {
+   "check": "container",
+   "where": "page",
+   "msg": "no .wrap",
+   "fix": "put the content in one .wrap",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "container"
+   ],
+   "wheres": [
+    "page"
+   ]
+  },
+  {
+   "check": "overflow-x",
+   "where": "page",
+   "msg": "the page scrolls sideways",
+   "fix": "remove what scrolls sideways",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "overflow-x"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [
+  {
+   "check": "focus-visible",
+   "where": "guidekit-widget",
+   "msg": "Tab stop 20, guidekit-widget \"\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "guidekit-widget"
+   ],
+   "reason": "Shadow DOM retargets internal focus to the custom-element host; the focused internal control renders a visible two-pixel accent ring."
+  }
+ ],
+ "warnCount": 14,
+ "at": "2026-11-16T19:00:53.793Z"
+}

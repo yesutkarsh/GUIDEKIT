@@ -1,0 +1,11 @@
+{
+ "page": null,
+ "url": "http://127.0.0.1:3001/demo/taxi-sanchalak?guide=open",
+ "root": null,
+ "kind": "software",
+ "category": "interactive product guidance",
+ "primary": "Ask Guide",
+ "rounds": 3,
+ "start": "2026-11-16T18:57:40.717Z",
+ "by": "gate.mjs --start"
+}

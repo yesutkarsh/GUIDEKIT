@@ -1,0 +1,100 @@
+.page { min-height: 100vh; background: var(--gk-canvas); color: var(--gk-ink); font-family: var(--gk-font-sans); }
+.topbar { position: sticky; top: 0; z-index: 20; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--gk-border); background: rgba(11, 14, 19, .96); padding: 0 max(24px, calc((100vw - 1240px) / 2)); }
+.brand { color: var(--gk-ink); font-size: 16px; font-weight: 600; text-decoration: none; }
+.topbar nav { display: flex; align-items: center; gap: 8px; }
+.topbar nav a { min-height: 44px; display: inline-flex; align-items: center; gap: 4px; border-radius: 8px; color: var(--gk-muted); padding: 0 12px; font-size: 13px; font-weight: 500; text-decoration: none; }
+.topbar nav a:hover, .topbar nav a[aria-current="page"] { color: var(--gk-ink); }
+.topbar nav .consoleLink { background: var(--gk-action); color: var(--gk-action-ink); }
+.topbar nav .consoleLink:hover { background: var(--gk-action-hover); color: white; }
+.topbar a:focus-visible, .sidebar a:focus-visible, .mobileToc select:focus-visible, .methodCards a:focus-visible, .primaryLink:focus-visible, .copyButton:focus-visible, .searchField input:focus-visible, .frameworkPicker select:focus-visible { outline: 2px solid var(--gk-accent); outline-offset: 2px; }
+.main { width: min(calc(100% - 48px), 1240px); margin: 0 auto; display: grid; grid-template-columns: 232px minmax(0, 780px); justify-content: space-between; gap: 72px; padding: 48px 0 96px; }
+.sidebar { position: sticky; top: 88px; align-self: start; }
+.sidebar > label { display: block; margin-bottom: 8px; color: var(--gk-muted); font-size: 12px; font-weight: 600; }
+.searchField { height: 44px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--gk-border-strong); border-radius: 8px; background: var(--gk-surface-subtle); padding: 0 11px; color: var(--gk-subtle); }
+.searchField:focus-within { border-color: var(--gk-accent); box-shadow: 0 0 0 3px var(--gk-accent-soft); }
+.searchField input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: var(--gk-ink); font: inherit; font-size: 13px; }
+.searchField input::placeholder { color: var(--gk-subtle); }
+.sidebar nav { display: flex; flex-direction: column; gap: 2px; margin-top: 18px; }
+.sidebar nav a { min-height: 40px; display: flex; align-items: center; border-radius: 7px; color: var(--gk-muted); padding: 0 10px; font-size: 13px; text-decoration: none; }
+.sidebar nav a:hover { background: var(--gk-surface-subtle); color: var(--gk-ink); }
+.mobileToc { display: none; }
+.noResults { margin: 8px 0; color: var(--gk-subtle); font-size: 12px; line-height: 1.5; }
+.content { min-width: 0; }
+.hero { padding: 34px 0 56px; }
+.eyebrow { margin: 0 0 12px; color: var(--gk-accent-hover); font-size: 13px; font-weight: 600; }
+.hero h1 { max-width: 680px; margin: 0; color: var(--gk-ink); font-size: clamp(36px, 5vw, 56px); font-weight: 600; letter-spacing: -.045em; line-height: 1.05; }
+.hero > p:not(.eyebrow) { max-width: 650px; margin: 20px 0 0; color: var(--gk-muted); font-size: 17px; line-height: 1.65; }
+.methodCards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+.methodCards a { min-height: 92px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; border: 1px solid var(--gk-border); border-radius: 12px; background: var(--gk-surface); color: var(--gk-ink); padding: 18px; text-decoration: none; transition: background-color 150ms ease, transform 150ms ease; }
+.methodCards a:hover { background: var(--gk-surface-hover); transform: translateY(-2px); }
+.methodCards span strong, .methodCards span small { display: block; }
+.methodCards span strong { font-size: 14px; font-weight: 600; }
+.methodCards span small { margin-top: 5px; color: var(--gk-subtle); font-size: 12px; line-height: 1.4; }
+.docSection { scroll-margin-top: 88px; border-top: 1px solid var(--gk-border); padding: 48px 0; }
+.docSection h2 { margin: 0; color: var(--gk-ink); font-size: 26px; font-weight: 600; letter-spacing: -.025em; }
+.docSection > p, .sectionTitleRow p, .afterCode { max-width: 680px; margin: 12px 0 0; color: var(--gk-muted); font-size: 15px; line-height: 1.7; }
+.docSection code { color: var(--gk-ink); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
+.steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 28px 0 0; padding: 1px; list-style: none; border: 1px solid var(--gk-border); border-radius: 12px; background: var(--gk-border); overflow: hidden; }
+.step { min-height: 138px; display: flex; align-items: flex-start; gap: 14px; background: var(--gk-surface); padding: 20px; }
+.step > span { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--gk-border-strong); border-radius: 7px; color: var(--gk-accent-hover); font-size: 12px; font-weight: 600; }
+.step h3 { margin: 2px 0 0; color: var(--gk-ink); font-size: 14px; font-weight: 600; }
+.step p { margin: 8px 0 0; color: var(--gk-muted); font-size: 13px; line-height: 1.6; }
+.primaryLink { min-height: 44px; display: inline-flex; align-items: center; gap: 4px; margin-top: 20px; border-radius: 8px; background: var(--gk-action); color: white; padding: 0 16px; font-size: 13px; font-weight: 600; text-decoration: none; }
+.primaryLink:hover { background: var(--gk-action-hover); }
+.callout { margin-top: 24px; border-left: 2px solid var(--gk-accent); background: var(--gk-accent-soft); padding: 15px 18px; }
+.callout strong { font-size: 13px; }
+.callout p { margin: 5px 0 0; color: var(--gk-muted); font-size: 13px; line-height: 1.55; }
+.originExamples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.originExamples div { min-width: 0; border: 1px solid var(--gk-border); border-radius: 10px; background: var(--gk-surface-subtle); padding: 14px; }
+.originExamples span { display: block; margin-bottom: 8px; color: var(--gk-subtle); font-size: 12px; }
+.originExamples code { display: block; overflow-x: auto; white-space: nowrap; font-size: 12px; }
+.sectionTitleRow { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.sectionTitleRow > svg { color: var(--gk-accent-hover); }
+.codeBlock { margin-top: 18px; overflow: hidden; border: 1px solid var(--gk-border); border-radius: 12px; background: #080b0f; }
+.codeHeader { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gk-border); background: var(--gk-surface-subtle); padding: 0 8px 0 14px; }
+.codeHeader > span { color: var(--gk-subtle); font-size: 12px; }
+.copyButton { min-height: 32px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--gk-border); border-radius: 7px; background: var(--gk-surface); color: var(--gk-muted); padding: 0 9px; font: inherit; font-size: 12px; cursor: pointer; }
+.copyButton:hover { color: var(--gk-ink); }
+.frameworkPicker { width: min(100%, 300px); margin-top: 24px; }
+.frameworkPicker label { display: block; margin-bottom: 8px; color: var(--gk-ink); font-size: 12px; font-weight: 600; }
+.selectWrap { position: relative; }
+.frameworkPicker select { width: 100%; height: 44px; appearance: none; border: 1px solid var(--gk-border-strong); border-radius: 8px; background: var(--gk-surface-subtle); color: var(--gk-ink); padding: 0 40px 0 12px; font: inherit; font-size: 14px; }
+.selectIcon { position: absolute; top: 50%; right: 12px; pointer-events: none; color: var(--gk-subtle); transform: translateY(-50%); }
+.afterCode { font-size: 13px; }
+.checklist { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; color: var(--gk-muted); font-size: 14px; line-height: 1.55; }
+.checklist svg { flex: 0 0 auto; margin-top: 3px; color: var(--gk-accent-hover); }
+.troubleshooting { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.troubleshooting article { border: 1px solid var(--gk-border); border-radius: 10px; background: var(--gk-surface); padding: 18px; }
+.troubleshooting h3 { margin: 0; color: var(--gk-ink); font-size: 14px; font-weight: 600; }
+.troubleshooting p { margin: 8px 0 0; color: var(--gk-muted); font-size: 13px; line-height: 1.6; }
+.footer { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--gk-border); padding: 0 max(24px, calc((100vw - 1240px) / 2)); color: var(--gk-subtle); font-size: 12px; }
+.footer a { min-height: 44px; display: inline-flex; align-items: center; color: var(--gk-muted); text-decoration: none; }
+.footer a:hover { color: var(--gk-ink); }
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; gap: 32px; }
+  .sidebar { position: static; }
+  .sidebar .desktopToc { display: none; }
+  .mobileToc { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 12px; }
+  .mobileToc label { color: var(--gk-muted); font-size: 12px; font-weight: 600; }
+  .mobileToc select { width: 100%; height: 44px; border: 1px solid var(--gk-border-strong); border-radius: 8px; background: var(--gk-surface-subtle); color: var(--gk-ink); padding: 0 10px; font: inherit; font-size: 13px; }
+  .hero { padding-top: 12px; }
+}
+@media (max-width: 640px) {
+  .topbar { padding: 0 16px; }
+  .topbar nav a:not(.consoleLink) { display: none; }
+  .main { width: min(calc(100% - 32px), 780px); padding-top: 24px; }
+  .hero h1 { font-size: 38px; }
+  .hero > p:not(.eyebrow) { font-size: 16px; }
+  .methodCards, .steps, .originExamples, .troubleshooting { grid-template-columns: 1fr; }
+  .step { min-height: auto; }
+  .docSection { padding: 40px 0; }
+  .footer { padding: 0 16px; }
+}
+@media (max-width: 390px) {
+  .consoleLink { padding: 0 10px !important; }
+  .mobileToc { grid-template-columns: 1fr; gap: 6px; }
+  .hero h1 { font-size: 34px; }
+  .methodCards a { min-height: 84px; }
+}
+@media (prefers-reduced-motion: reduce) { .methodCards a { transition: none; } .methodCards a:hover { transform: none; } }

@@ -1,0 +1,11 @@
+{
+ "page": null,
+ "url": "http://127.0.0.1:3000/dashboard",
+ "root": null,
+ "kind": "software",
+ "category": "developer tour management",
+ "primary": "Create project",
+ "rounds": 3,
+ "start": "2026-11-13T17:10:48.665Z",
+ "by": "gate.mjs --start"
+}

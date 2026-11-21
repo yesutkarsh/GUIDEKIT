@@ -1,0 +1,7 @@
+[
+  {
+    "check": "focus-visible",
+    "target": "guidekit-widget",
+    "reason": "Shadow DOM retargets internal focus to the custom-element host; the focused internal control renders a visible two-pixel accent ring."
+  }
+]

@@ -1,0 +1,107 @@
+@layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "@astryxdesign/core/reset.css";
+@import "@astryxdesign/core/astryx.css";
+@import "@astryxdesign/theme-neutral/theme.css";
+@import "@astryxdesign/core/tailwind-theme.css";
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "../../node_modules/@heroui/styles/dist/heroui.min.css";
+@import "../styles/guidekit-tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A0A0C;
+  color: #F5F5F7;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+html.dashboard-active,
+body.dashboard-active {
+  width: 100%;
+  min-height: 100%;
+  background: var(--gk-canvas);
+  color: var(--gk-ink);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2229;
+  border-radius: 3px;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 34%), #0A0A0C;
+}
+
+.auth-card {
+  width: min(100%, 440px);
+  padding: 36px 32px;
+  border: 1px solid #252832;
+  border-radius: 18px;
+  background: rgba(18, 19, 22, 0.96);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.auth-card h1 { margin: 18px 0 8px; font-size: 24px; color: #fff; }
+.auth-card p { color: #9ca0ac; line-height: 1.55; }
+.auth-brand { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-weight: 750; font-size: 20px; text-decoration: none; }
+.auth-logo { width: 44px; height: 44px; margin: 0 auto; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: #10B981; color: #07130f; font-weight: 850; }
+.auth-brand .auth-logo { width: 38px; height: 38px; margin: 0; }
+.google-button, .secondary-auth-button { width: 100%; min-height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 11px 16px; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none; }
+.google-button { margin-top: 22px; border: 0; background: #182d50; color: #ffffff; }
+.google-button:hover:not(:disabled) { background: #203d67; }
+.google-button:disabled { opacity: 0.55; cursor: not-allowed; }
+.secondary-auth-button { margin-top: 10px; border: 1px solid #303440; background: #191b20; color: #e6e7eb; }
+.danger-button { color: #fb7185; border-color: rgba(244, 63, 94, 0.35); }
+.google-mark { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; background: white; color: #4285f4; font-weight: 900; }
+.auth-status { min-height: 36px; margin: 15px 0 0; font-size: 12px; }
+.auth-error { display: flex; align-items: center; gap: 9px; margin-top: 18px; padding: 11px 12px; border: 1px solid rgba(244, 63, 94, 0.4); border-radius: 9px; background: rgba(244, 63, 94, 0.09); color: #fb7185; font-size: 13px; text-align: left; }
+.auth-form { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; text-align: left; }
+.auth-form label { color: #d7d9df; font-size: 13px; font-weight: 650; }
+.auth-form input { width: 100%; min-height: 46px; border: 1px solid #303440; border-radius: 9px; background: #0d0e11; color: #fff; padding: 11px 13px; font-size: 15px; outline: none; }
+.auth-form input:focus { border-color: #52a9ff; box-shadow: 0 0 0 3px rgba(82, 169, 255, 0.18); }
+.auth-form .google-button { margin-top: 8px; }
+.auth-spinner { animation: auth-spin 0.8s linear infinite; }
+.auth-spinner-large { display: block; margin: 18px auto; color: #10B981; }
+.auth-success-icon { color: #34D399; margin: 0 auto; }
+.auth-danger-icon { color: #fb7185; margin: 0 auto; }
+.device-details { margin: 22px 0; border: 1px solid #292d37; border-radius: 10px; overflow: hidden; text-align: left; }
+.device-details div { display: flex; justify-content: space-between; gap: 18px; padding: 11px 13px; border-bottom: 1px solid #292d37; }
+.device-details div:last-child { border-bottom: 0; }
+.device-details dt { color: #858a97; font-size: 12px; }
+.device-details dd { margin: 0; color: #f4f4f5; font-size: 12px; text-align: right; overflow-wrap: anywhere; }
+.device-code-text, .device-code-input { font-family: 'JetBrains Mono', 'Fira Code', monospace; letter-spacing: 2px; }
+.device-code-input { text-align: center; font-size: 20px !important; }
+
+@keyframes auth-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
